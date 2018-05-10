@@ -1,4 +1,4 @@
-<template>
+<template lang="pug">
   <section class="container">
     <div>
       <app-logo/>
@@ -9,27 +9,29 @@
         Nuxt.js project
       </h2>
       <div class="links">
-        <a
+        a(
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Documentation</a>
-        <a
+          class="button--green"
+        ) Documentation
+        a(
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--grey"
+        ) GitHub
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from '~/components/AppLogo.vue';
 
 export default {
   components: {
-    AppLogo
-  }
-}
+    AppLogo,
+  },
+};
 </script>
 
 <style>
@@ -42,7 +44,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;
