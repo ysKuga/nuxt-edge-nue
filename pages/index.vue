@@ -1,14 +1,10 @@
 <template lang="pug">
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nuxt-edge-nue
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
+  section.container
+    div
+      app-logo
+      h1.title nuxt-edge-nue
+      h2.subtitle Nuxt.js project
+      .links
         a(
           href="https://nuxtjs.org/"
           target="_blank"
@@ -19,9 +15,6 @@
           target="_blank"
           class="button--grey"
         ) GitHub
-      </div>
-    </div>
-  </section>
 </template>
 
 <script>
@@ -34,7 +27,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
   min-height: 100vh;
   display: flex;
