@@ -1,4 +1,11 @@
 module.exports = {
+  modules: [
+    ['@nuxtjs/axios'],
+    ['@nuxtjs/toast'],
+    ['@nuxtjs/proxy',
+      // { pathRewrite: { '^/api' : '/api/v1' } }
+    ],
+  ],
   /*
    ** Headers of the page
    */
