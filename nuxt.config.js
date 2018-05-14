@@ -50,8 +50,22 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
+    },
+  },
+  proxy: {
+    // With options
+    '/api': {
+      target: 'http://localhost:3000/data',
+      // WebSocket: false
+      ws: false,
+      // from 'localhost:3000'
+      changeOrigin: true,
+      pathRewrite: {
+        // /api/～ -> http://localhost:3000/data/
+        '^/api/': ''
+      },
     }
   }
 }
