@@ -17,5 +17,7 @@ module.exports = {
     'vue'
   ],
   // add your custom rules here
-  rules: {}
-}
+  rules: {
+    "comma-dangle": [2, "always-multiline"],
+  }
+};
