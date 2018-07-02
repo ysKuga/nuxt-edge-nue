@@ -12,29 +12,29 @@ module.exports = {
   head: {
     title: 'nuxt-edge-nue',
     meta: [{
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js project'
-      }
+        content: 'Nuxt.js project',
+      },
     ],
     link: [{
       rel: 'icon',
       type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+      href: '/favicon.ico',
+    }],
   },
   /*
    ** Customize the progress bar color
    */
   loading: {
-    color: '#3B8070'
+    color: '#3B8070',
   },
   /*
    ** Build configuration
@@ -49,7 +49,7 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         });
       }
     },
@@ -64,8 +64,8 @@ module.exports = {
       changeOrigin: true,
       pathRewrite: {
         // /api/～ -> http://localhost:3000/data/
-        '^/api/': ''
+        '^/api/': '',
       },
-    }
-  }
-}
+    },
+  },
+};
