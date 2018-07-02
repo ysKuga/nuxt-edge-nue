@@ -7,9 +7,14 @@ module.exports = {
     ],
   ],
   plugins: [{
-    src: '~plugins/vuejs-logger',
-    ssr: false,
-  }],
+      src: '~plugins/vuejs-logger',
+      ssr: false,
+    },
+    {
+      src: '~plugins/axios',
+      ssr: false,
+    },
+  ],
   /*
    ** Headers of the page
    */

@@ -9,13 +9,13 @@ const options = {
   // optional : defaults to false if not specified
   stringifyArguments: false,
   // optional : defaults to false if not specified
-  showLogLevel: false,
+  showLogLevel: true,
   // optional : defaults to false if not specified
-  showMethodName: false,
+  showMethodName: true,
   // optional : defaults to '|' if not specified
   separator: '|',
   // optional : defaults to false if not specified
-  showConsoleColors: false,
+  showConsoleColors: true,
 }
 
 Vue.use(VueLogger, options);
