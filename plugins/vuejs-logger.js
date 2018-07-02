@@ -16,6 +16,6 @@ const options = {
   separator: '|',
   // optional : defaults to false if not specified
   showConsoleColors: true,
-}
+};
 
 Vue.use(VueLogger, options);

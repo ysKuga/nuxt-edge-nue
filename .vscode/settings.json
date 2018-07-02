@@ -1,0 +1,12 @@
+{
+  "eslint.autoFixOnSave": true,
+  "editor.tabSize": 2,
+  "prettier.trailingComma": "all",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+  ],
+}
