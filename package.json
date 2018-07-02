@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/proxy": "^1.2.4",
     "@nuxtjs/toast": "^3.0.1",
-    "nuxt-edge": "^2.0.0-25459710.0d0d83c"
+    "nuxt-edge": "^2.0.0-25459710.0d0d83c",
+    "vuejs-logger": "^1.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
