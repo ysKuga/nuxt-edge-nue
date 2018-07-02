@@ -1,6 +1,6 @@
 export default function ({
   $axios,
-  store
+  store,
 }) {
   $axios.onRequest((config) => {
     return config;

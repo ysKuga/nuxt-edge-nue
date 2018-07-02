@@ -6,6 +6,10 @@ module.exports = {
       // { pathRewrite: { '^/api' : '/api/v1' } }
     ],
   ],
+  plugins: [{
+    src: '~plugins/vuejs-logger',
+    ssr: false,
+  }],
   /*
    ** Headers of the page
    */
