@@ -49,10 +49,14 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    /*
-     ** Run ESLint on save
+    /**
+     * Run ESLint on save
+     * 
+     * @see https://github.com/renowan/nuxt-edge-typescript-template/blob/master/nuxt.config.js#L39-L52
      */
-    extend(config) {
+    extend(config, {
+      isServer,
+    }) {
       if (process.server && process.browser) {
         config.module.rules.push({
           enforce: 'pre',
@@ -60,6 +64,29 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
         });
+      }
+      const tsLoader = {
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+          transpileOnly: true,
+        },
+        exclude: [/vendor/, /\.nuxt/],
+      };
+      config.module.rules.push(Object.assign({
+        test: /((client|server)\.js)|(\.tsx?)$/,
+      }, tsLoader));
+      config.resolve.extensions.push('.ts');
+      config.module.rules.map((rule) => {
+        if (rule.loader === 'vue-loader') {
+          rule.options.loaders = {
+            ts: tsLoader,
+          };
+        }
+        return rule;
+      });
+      if (isServer) {
+        config.externals = [];
       }
     },
   },
