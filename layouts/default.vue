@@ -12,7 +12,7 @@ interface TypeScriptTest {
 export default Vue.extend({
   mounted() {
     const tst: TypeScriptTest = { type: 'たいぷ', script: 123 };
-    console.log('TypeScriptTest', tst);
+    this.$log.debug('TypeScriptTest', tst, this.$axios);
   },
 });
 </script>
