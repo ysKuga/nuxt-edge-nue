@@ -20,7 +20,8 @@
     "nuxt": "^2.0.0",
     "ts-loader": "^5.1.1",
     "typescript": "^3.0.3",
-    "vuejs-logger": "^1.4.0"
+    "vuejs-logger": "^1.4.0",
+    "webpack": "^4.19.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
