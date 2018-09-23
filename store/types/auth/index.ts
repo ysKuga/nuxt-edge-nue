@@ -1,3 +1,5 @@
 export namespace Auth {
-  export interface State {}
+  export interface State {
+    'is-authed': boolean;
+  }
 }

@@ -11,3 +11,5 @@ const store: StoreOptions<Root.State> = {
   },
   modules,
 };
+
+export default store;
