@@ -2,16 +2,22 @@ module.exports = {
   modules: [
     ['@nuxtjs/axios'],
     ['@nuxtjs/toast'],
-    ['@nuxtjs/proxy',
+    [
+      '@nuxtjs/proxy',
       // { pathRewrite: { '^/api' : '/api/v1' } }
     ],
   ],
-  plugins: [{
+  plugins: [
+    {
       src: '~plugins/vuejs-logger',
       ssr: false,
     },
     {
       src: '~plugins/axios',
+      ssr: false,
+    },
+    {
+      src: '~plugins/store',
       ssr: false,
     },
   ],
@@ -20,7 +26,8 @@ module.exports = {
    */
   head: {
     title: 'nuxt-edge-nue',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8',
       },
       {
@@ -33,11 +40,13 @@ module.exports = {
         content: 'Nuxt.js project',
       },
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico',
-    }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+    ],
   },
   /*
    ** Customize the progress bar color
@@ -51,13 +60,12 @@ module.exports = {
   build: {
     /**
      * Run ESLint on save
-     * 
+     *
      * @see https://github.com/renowan/nuxt-edge-typescript-template/blob/master/nuxt.config.js#L39-L52
      */
-    extend(config, {
-      isServer,
-    }) {
-      if (process.server && process.browser) {
+    extend(config, { isServer }) {
+      const { server, browser } = process as any;
+      if (server && browser) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -73,11 +81,16 @@ module.exports = {
         },
         exclude: [/vendor/, /\.nuxt/],
       };
-      config.module.rules.push(Object.assign({
-        test: /((client|server)\.js)|(\.tsx?)$/,
-      }, tsLoader));
+      config.module.rules.push(
+        Object.assign(
+          {
+            test: /((client|server)\.js)|(\.tsx?)$/,
+          },
+          tsLoader,
+        ),
+      );
       config.resolve.extensions.push('.ts');
-      config.module.rules.map((rule) => {
+      config.module.rules.map(rule => {
         if (rule.loader === 'vue-loader') {
           rule.options.loaders = {
             ts: tsLoader,
