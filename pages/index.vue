@@ -17,14 +17,15 @@
         ) GitHub
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import AppLogo from '~/components/AppLogo.vue';
-
-export default {
+export default Vue.extend({
+  middleware: ['check-auth'],
   components: {
     AppLogo,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
