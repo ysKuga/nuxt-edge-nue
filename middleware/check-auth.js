@@ -1,6 +1,5 @@
 import Vue from 'vue';
 
-console.log('MIDDLEWARE');
 export default function (context) {
   const {
     store,
