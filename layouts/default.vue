@@ -5,14 +5,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-interface TypeScriptTest {
-  type: string;
-  script: number;
-}
+
 export default Vue.extend({
+  middleware: 'check-auth',
   mounted() {
-    const tst: TypeScriptTest = { type: 'たいぷ', script: 123 };
-    this.$log.debug(tst, this.$axios, this.$store.getters['Auth/checkAuth']);
+    this.$log.debug(this.$axios, this.$store.getters['Auth/checkAuth']);
   },
 });
 </script>
