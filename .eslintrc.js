@@ -2,22 +2,32 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
+    'es6': true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    'ecmaVersion': 2018,
   },
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential'
+    'vue',
+    'plugin:vue/recommended',
+    // semi colon のため vue 関連の後に
+    'eslint:recommended',
+    'plugin:prettier/recommended',
   ],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
+    'prettier',
   ],
   // add your custom rules here
   rules: {
-    "comma-dangle": [2, "always-multiline"],
+    'prettier/prettier': ['error', {
+      // https://github.com/prettier/prettier/issues/2280#issuecomment-311326803
+      'singleQuote': true,
+      'trailingComma': true,
+    }],
+    'comma-dangle': [2, 'always-multiline'],
   }
 };

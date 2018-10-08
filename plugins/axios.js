@@ -1,11 +1,11 @@
 import Vue from 'vue';
-export default function (context) {
+export default function(context) {
   const {
     $axios,
-    store,
+    // store,
   } = context;
   Vue.$log.debug(context);
-  $axios.onRequest((config) => {
+  $axios.onRequest(config => {
     return config;
   });
 }
