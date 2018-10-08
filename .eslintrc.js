@@ -25,7 +25,8 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error', {
       // https://github.com/prettier/prettier/issues/2280#issuecomment-311326803
-      'singleQuote': true
+      'singleQuote': true,
+      'trailingComma': true,
     }],
     'comma-dangle': [2, 'always-multiline'],
   }
