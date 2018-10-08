@@ -2,14 +2,18 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
+    "es6": true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    "ecmaVersion": 2018,
   },
   extends: [
     'vue',
     'plugin:vue/recommended',
+    // semi colon のため vue 関連の後に
+    'eslint:recommended',
   ],
   // required to lint *.vue files
   plugins: [
