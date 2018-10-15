@@ -4,7 +4,6 @@ export default function(context) {
     $axios,
     // store,
   } = context;
-  Vue.$log.debug(context);
   $axios.onRequest(config => {
     return config;
   });
