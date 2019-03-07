@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
     "target": "es6",
     "lib": ["dom", "es2015"],
     "module": "es2015",
@@ -16,6 +18,10 @@
     "paths": {
       "*": ["*"],
       "~/*": ["./*"]
-    }
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/vue-app"
+    ]
   }
 }

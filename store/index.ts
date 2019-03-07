@@ -12,4 +12,4 @@ const store: StoreOptions<Root.State> = {
   modules,
 };
 
-export default new Vuex.Store<Root.State>(store);
+export default () => new Vuex.Store<Root.State>(store);

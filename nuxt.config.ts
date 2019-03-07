@@ -64,7 +64,7 @@ module.exports = {
      * @see https://github.com/renowan/nuxt-edge-typescript-template/blob/master/nuxt.config.js#L39-L52
      */
     extend(config, { isServer }) {
-      const { server, browser } = process as any;
+      const { server, browser } = process;
       if (server && browser) {
         config.module.rules.push({
           enforce: 'pre',
