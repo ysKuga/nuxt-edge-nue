@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "noImplicitAny": false,
-    "noImplicitThis": false,
+    "noImplicitThis": true,
     "strictNullChecks": true,
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -19,9 +19,6 @@
       "*": ["*"],
       "~/*": ["./*"]
     },
-    "types": [
-      "@types/node",
-      "@nuxt/vue-app"
-    ]
+    "types": ["@types/node", "@nuxt/vue-app"]
   }
 }
