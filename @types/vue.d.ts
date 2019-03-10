@@ -1,10 +1,40 @@
 import Vue, { ComponentOptions } from 'vue';
+import { AxiosStatic } from 'axios';
+import { Middleware } from '@nuxt/vue-app';
+
+// declare module の指定の事例
+// node_modules/@nuxt/vue-app/types/vue.d.ts
+
+// declare module "vue/types/options" {
+//   interface ComponentOptions<V extends Vue> {
+//     middleware?: Middleware | Middleware[];
+//   }
+// }
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
-    // This adds the `middleware` property to the existing `vue/types/options/ComponentOptions` type
-    middleware?: string | string[];
-    // Nuxt.js の layout 指定向け
-    layout?: string;
+    // なんか JavaScript の middleware 指定と違うのでとりあえずがっぺい
+    middleware?: string | string[] | Middleware | Middleware[];
+  }
+}
+
+// declare module "vue/types/vue" {
+//   interface Vue {
+//     $nuxt: NuxtApp;
+//   }
+// }
+
+type Messages = any[];
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $axios: AxiosStatic;
+    $log: {
+      debug(...messages: Messages): void;
+      info(...messages: Messages): void;
+      warn(...messages: Messages): void;
+      error(...messages: Messages): void;
+      fatal(...messages: Messages): void;
+    };
   }
 }
