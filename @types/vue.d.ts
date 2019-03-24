@@ -14,7 +14,7 @@ import { Middleware } from '@nuxt/vue-app';
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
     // なんか JavaScript の middleware 指定と違うのでとりあえずがっぺい
-    middleware?: string | string[] | Middleware | Middleware[];
+    middleware?: (string | Middleware) | (string | Middleware[]);
   }
 }
 
