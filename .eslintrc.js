@@ -13,7 +13,9 @@ module.exports = {
     'vue',
     'plugin:vue/recommended',
     // semi colon のため vue 関連の後に
-    'eslint:recommended',
+    // 下記エラーが出たのでいったんコメントアウト
+    // Cannot read config file: c:\Users\yoshihiko\Desktop\bench\vue\nuxt-edge-nue\node_modules\eslint\conf\eslint-recommended.js
+    // 'eslint:recommended',
     'plugin:prettier/recommended',
   ],
   // required to lint *.vue files
