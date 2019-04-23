@@ -1,5 +1,5 @@
-import { Auth as Local } from 'store/types';
+// import { Auth as Local } from 'store/types';
 
-export const state: Local.State = {
+export const state: Store.Auth.State = {
   'is-authed': false,
 };
