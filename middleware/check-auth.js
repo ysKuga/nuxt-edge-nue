@@ -1,4 +1,8 @@
-export default function(context) {
+// eslint-disable-next-line no-unused-vars
+import { Middleware } from '@nuxt/vue-app';
+
+/** @type Middleware  */
+const middleware = function(context) {
   const { store } = context;
   console.log('middleware/check-auth');
   // ユーザーが認証されていないとき
@@ -8,4 +12,6 @@ export default function(context) {
   } else {
     console.log('OUSUDO');
   }
-}
+};
+
+export default middleware;
