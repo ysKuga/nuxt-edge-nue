@@ -1,4 +1,3 @@
-import Vue, { ComponentOptions } from 'vue';
 import { Middleware } from '@nuxt/vue-app';
 import { NuxtAxiosInstance } from '@nuxtjs/axios';
 
@@ -10,13 +9,6 @@ import { NuxtAxiosInstance } from '@nuxtjs/axios';
 //     middleware?: Middleware | Middleware[];
 //   }
 // }
-
-declare module 'vue/types/options' {
-  interface ComponentOptions<V extends Vue> {
-    // なんか JavaScript の middleware 指定と違うのでとりあえずがっぺい
-    middleware?: (string | Middleware) | (string | Middleware[]);
-  }
-}
 
 // declare module "vue/types/vue" {
 //   interface Vue {
