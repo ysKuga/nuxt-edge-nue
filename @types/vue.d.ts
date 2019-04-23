@@ -1,6 +1,6 @@
 import Vue, { ComponentOptions } from 'vue';
-import { AxiosStatic } from 'axios';
 import { Middleware } from '@nuxt/vue-app';
+import { NuxtAxiosInstance } from '@nuxtjs/axios';
 
 // declare module の指定の事例
 // node_modules/@nuxt/vue-app/types/vue.d.ts
@@ -28,7 +28,7 @@ type Messages = any[];
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $axios: AxiosStatic;
+    $axios: NuxtAxiosInstance;
     $log: {
       debug(...messages: Messages): void;
       info(...messages: Messages): void;

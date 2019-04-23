@@ -1,5 +1,7 @@
 import Vue from 'vue';
-export default function(context) {
+import { Middleware } from '@nuxt/vue-app';
+
+const middleware: Middleware = function(context) {
   const {
     $axios,
     // store,
@@ -7,4 +9,6 @@ export default function(context) {
   $axios.onRequest(config => {
     return config;
   });
-}
+};
+
+export default middleware;
