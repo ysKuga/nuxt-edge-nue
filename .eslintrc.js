@@ -5,28 +5,24 @@ module.exports = {
     node: true,
     es6: true,
   },
-  parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
   },
   extends: [
-    "plugin:prettier/recommended",
-    "plugin:vue/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "eslint:recommended",
+    'plugin:prettier/recommended',
+    'plugin:vue/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'eslint:recommended',
   ],
   // required to lint *.vue files
   // plugins: ["vue", "prettier"],
   // add your custom rules here
   rules: {
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md#options
-    // - 上記より下記 2 つの指定がインデントを 2 にする
-    indent: "off",
-    "@typescript-eslint/indent": ["error", 2],
     // https://github.com/prettier/eslint-plugin-prettier/issues/94#issuecomment-438781791
     // - 上記により HTML タグが 1 行あたり 80 文字を超過した場合に属性が 1 つ 1 行となる・・・
-    "vue/max-attributes-per-line": [
+    'vue/max-attributes-per-line': [
       2,
       {
         singleline: 20,
@@ -36,14 +32,14 @@ module.exports = {
         },
       },
     ],
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
         // https://github.com/prettier/prettier/issues/2280#issuecomment-311326803
         singleQuote: true,
         trailingComma: true,
       },
     ],
-    "comma-dangle": [2, "always-multiline"],
+    'comma-dangle': [2, 'always-multiline'],
   },
 };
