@@ -20,4 +20,7 @@
       "autoFix": true
     },
   ],
+  // https://www.reddit.com/r/webdev/comments/a5xta7/what_is_this_file_is_a_commonjs_module_error/
+  // - インフォメーション表示をオフにする
+  // "javascript.suggestionActions.enabled": false,
 }
