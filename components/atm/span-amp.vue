@@ -1,10 +1,10 @@
 <template>
-  <span 
-    class=""
-    title=""
-  >&amp;<slot /></span>
+  <span class="" title="">
+    &amp;
+    <slot />
+  </span>
 </template>
 
-<script >
+<script>
 export default {};
 </script>
