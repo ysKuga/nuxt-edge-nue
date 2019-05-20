@@ -1,9 +1,11 @@
 {
+  "files.eol": "\n",
   "vetur.format.defaultFormatter.js": "vscode-typescript",
   "vetur.format.defaultFormatter.html": "js-beautify-html",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "eslint.autoFixOnSave": true,
-  "eslint.validate": [{
+  "eslint.validate": [
+    {
       "language": "vue",
       "autoFix": true
     },
@@ -18,8 +20,10 @@
     {
       "language": "typescript",
       "autoFix": true
-    },
+    }
   ],
+  "prettier.trailingComma": "all",
+  "files.trimTrailingWhitespace": true
   // https://www.reddit.com/r/webdev/comments/a5xta7/what_is_this_file_is_a_commonjs_module_error/
   // - インフォメーション表示をオフにする
   // "javascript.suggestionActions.enabled": false,
