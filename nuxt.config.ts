@@ -1,5 +1,6 @@
 import { Configuration } from 'webpack';
 import { Context } from '@nuxt/vue-app';
+import webpack from 'webpack';
 
 module.exports = {
   modules: [
@@ -94,14 +95,18 @@ module.exports = {
             tsLoader
           )
         );
-        config.module.rules.map(rule => {
-          if (rule.loader === 'vue-loader' && rule.options) {
-            rule.options.loaders = {
-              ts: tsLoader,
-            };
+        config.module.rules.map(
+          (rule): webpack.RuleSetRule => {
+            if (rule.loader === 'vue-loader' && rule.options) {
+              // rule.options.loaders だと下記エラーが出てしまったので文字列での指定にしてみる
+              // - プロパティ 'loaders' は型 'string' に存在しません。
+              rule.options['loaders'] = {
+                ts: tsLoader,
+              };
+            }
+            return rule;
           }
-          return rule;
-        });
+        );
       }
       config.resolve &&
         config.resolve.extensions &&
