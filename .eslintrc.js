@@ -37,7 +37,7 @@ module.exports = {
       {
         // https://github.com/prettier/prettier/issues/2280#issuecomment-311326803
         singleQuote: true,
-        trailingComma: true,
+        trailingComma: 'es5',
       },
     ],
     'comma-dangle': [2, 'always-multiline'],
