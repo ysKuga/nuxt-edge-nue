@@ -1,4 +1,4 @@
-import { Middleware } from '@nuxt/vue-app';
+// import { Middleware } from '@nuxt/vue-app';
 import { NuxtAxiosInstance } from '@nuxtjs/axios';
 
 // declare module の指定の事例
@@ -16,7 +16,7 @@ import { NuxtAxiosInstance } from '@nuxtjs/axios';
 //   }
 // }
 
-type Messages = any[];
+type Messages = unknown[];
 
 declare module 'vue/types/vue' {
   interface Vue {
