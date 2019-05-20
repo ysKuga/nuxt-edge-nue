@@ -1,10 +1,12 @@
 declare namespace Store {
-  interface Root {
-    State: {};
+  namespace Root {
+    interface State {
+      version?: string | number;
+    }
   }
-  interface Auth {
-    State: {
+  namespace Auth {
+    interface State {
       'is-authed': boolean;
-    };
+    }
   }
 }
