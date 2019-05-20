@@ -1,9 +1,10 @@
-declare module Store.Root {
-  interface State {}
-}
-
-declare module Store.Auth {
-  interface State {
-    'is-authed': boolean;
+declare namespace Store {
+  interface Root {
+    State: {};
+  }
+  interface Auth {
+    State: {
+      'is-authed': boolean;
+    };
   }
 }
