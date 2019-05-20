@@ -1,3 +1,6 @@
+import { Configuration } from 'webpack';
+import { Context } from '@nuxt/vue-app';
+
 module.exports = {
   modules: [
     ['@nuxtjs/axios'],
@@ -63,15 +66,16 @@ module.exports = {
      *
      * @see https://github.com/renowan/nuxt-edge-typescript-template/blob/master/nuxt.config.js#L39-L52
      */
-    extend(config, { isServer }) {
+    extend(config: Configuration, { isServer }: Context): void {
       const { server, browser } = process;
       if (server && browser) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-        });
+        config.module &&
+          config.module.rules.push({
+            enforce: 'pre',
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /(node_modules)/,
+          });
       }
       const tsLoader = {
         loader: 'ts-loader',
@@ -81,23 +85,27 @@ module.exports = {
         },
         exclude: [/vendor/, /\.nuxt/],
       };
-      config.module.rules.push(
-        Object.assign(
-          {
-            test: /((client|server)\.js)|(\.tsx?)$/,
-          },
-          tsLoader,
-        ),
-      );
-      config.resolve.extensions.push('.ts');
-      config.module.rules.map(rule => {
-        if (rule.loader === 'vue-loader') {
-          rule.options.loaders = {
-            ts: tsLoader,
-          };
-        }
-        return rule;
-      });
+      if (config.module) {
+        config.module.rules.push(
+          Object.assign(
+            {
+              test: /((client|server)\.js)|(\.tsx?)$/,
+            },
+            tsLoader
+          )
+        );
+        config.module.rules.map(rule => {
+          if (rule.loader === 'vue-loader' && rule.options) {
+            rule.options.loaders = {
+              ts: tsLoader,
+            };
+          }
+          return rule;
+        });
+      }
+      config.resolve &&
+        config.resolve.extensions &&
+        config.resolve.extensions.push('.ts');
       if (isServer) {
         config.externals = [];
       }
