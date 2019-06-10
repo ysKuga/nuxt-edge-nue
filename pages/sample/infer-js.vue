@@ -8,6 +8,7 @@
 <script>
 import Vue from 'vue';
 import _ from 'lodash';
+
 class Entity {
   id = 1;
   name = 'entetei';
@@ -79,13 +80,11 @@ export default Vue.extend({
       // const self = this;
       this.$log.debug('new: %s, old: %s', val, oldVal);
     },
-    /**
-     */
     b: _.debounce(
       /**
-       * @
+       * @this {Vue}
        * @param {number} val
-       * @param {number} val
+       * @param {number} oldVal
        */
       function(val, oldVal) {
         this.$log.debug('new: %s, old: %s', val, oldVal);
