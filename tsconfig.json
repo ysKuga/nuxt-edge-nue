@@ -20,7 +20,6 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@types/node", "@types/webpack", "@nuxt/vue-app"],
     "esModuleInterop": true,
     "sourceMap": true
   }
