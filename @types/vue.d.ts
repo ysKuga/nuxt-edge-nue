@@ -28,5 +28,6 @@ declare module 'vue/types/vue' {
       error(...messages: Messages): void;
       fatal(...messages: Messages): void;
     };
+    $jq: JQueryStatic;
   }
 }

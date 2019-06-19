@@ -13,6 +13,10 @@ module.exports = {
   ],
   plugins: [
     {
+      src: '~plugins/jquery',
+      ssr: false,
+    },
+    {
       src: '~plugins/vuejs-logger',
       ssr: false,
     },
