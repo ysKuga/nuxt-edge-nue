@@ -9,7 +9,7 @@ import Vue from 'vue';
 export default Vue.extend({
   middleware: 'check-auth',
   mounted() {
-    this.$log.debug(this.$axios, this.$store.getters['Auth/checkAuth']);
+    this.$log.debug('layouts/default', this.$store.getters['auth/checkAuth']);
   },
 });
 </script>
