@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line
 import { Middleware } from '@nuxt/vue-app';
 
 /** @type Middleware  */
