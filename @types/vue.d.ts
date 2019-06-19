@@ -1,5 +1,4 @@
 // import { Middleware } from '@nuxt/vue-app';
-import { NuxtAxiosInstance } from '@nuxtjs/axios';
 import { VueLogger } from './vue-logger';
 
 // declare module の指定の事例
@@ -19,7 +18,6 @@ import { VueLogger } from './vue-logger';
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $axios: NuxtAxiosInstance;
     $log: VueLogger;
     $jq: JQueryStatic;
   }
