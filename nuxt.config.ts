@@ -24,10 +24,6 @@ module.exports = {
       src: '~plugins/axios',
       ssr: false,
     },
-    {
-      src: '~plugins/store',
-      ssr: false,
-    },
   ],
   /*
    ** Headers of the page
