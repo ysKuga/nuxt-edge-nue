@@ -1,16 +1,29 @@
-import { Configuration } from 'webpack';
-import { Context } from '@nuxt/vue-app';
 import webpack from 'webpack';
+import { Configuration } from 'webpack';
+import NuxtConfiguration, { Module } from '@nuxt/config';
+import {} from '@nuxtjs/axios';
 
-module.exports = {
-  modules: [
-    ['@nuxtjs/axios'],
-    ['@nuxtjs/toast'],
-    [
-      '@nuxtjs/proxy',
-      // { pathRewrite: { '^/api' : '/api/v1' } }
-    ],
+// @nuxt/vue-app の Context が build のものとうまくいかなかったので
+// import { Context } from '@nuxt/vue-app';
+interface Context {
+  isDev: boolean;
+  isClient: boolean;
+  isServer: boolean;
+  loaders: unknown;
+}
+
+const modules: Module[] = [
+  '@nuxtjs/axios',
+  '@nuxtjs/toast',
+  [
+    '@nuxtjs/proxy',
+    {},
+    // { pathRewrite: { '^/api' : '/api/v1' } }
   ],
+];
+
+const config: NuxtConfiguration = {
+  modules,
   plugins: [
     {
       src: '~plugins/jquery',
@@ -67,9 +80,10 @@ module.exports = {
      *
      * @see https://github.com/renowan/nuxt-edge-typescript-template/blob/master/nuxt.config.js#L39-L52
      */
-    extend(config: Configuration, { isServer }: Context): void {
-      const { server, browser } = process;
-      if (server && browser) {
+    extend(config: Configuration, ctx: Context): void {
+      // module.export でなくしたので process へのアクセスができなくなった？
+      const { isServer, isClient } = ctx;
+      if (isServer && isClient) {
         config.module &&
           config.module.rules.push({
             enforce: 'pre',
@@ -131,3 +145,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
