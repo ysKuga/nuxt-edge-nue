@@ -1,3 +1,4 @@
+import _VueRouter, { RouterOptions } from 'vue-router';
 // import { Middleware } from '@nuxt/vue-app';
 import { VueLogger } from './vue-logger';
 
@@ -17,7 +18,11 @@ import { VueLogger } from './vue-logger';
 // }
 
 declare module 'vue/types/vue' {
+  interface VueRouter extends _VueRouter {
+    options?: RouterOptions;
+  }
   interface Vue {
+    $router: VueRouter;
     $log: VueLogger;
     $jq: JQueryStatic;
   }
