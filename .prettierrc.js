@@ -1,8 +1,8 @@
 // https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb
-module.exports =  {
+module.exports = {
   semi: true,
-  trailingComma: 'all',
+  trailingComma: 'es5',
   singleQuote: true,
   // printWidth: 120,
-  tabWidth: 2,
+  tabWidth: 2
 };

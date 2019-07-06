@@ -11,10 +11,10 @@ module.exports = {
   },
   extends: [
     'plugin:prettier/recommended',
+    'eslint:recommended',
     'plugin:vue/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    'eslint:recommended',
   ],
   // required to lint *.vue files
   // plugins: ["vue", "prettier"],
@@ -47,7 +47,7 @@ module.exports = {
       {
         // https://github.com/prettier/prettier/issues/2280#issuecomment-311326803
         singleQuote: true,
-        trailingComma: 'es5',
+        // trailingComma: 'es5',
       },
     ],
     'comma-dangle': [2, 'always-multiline'],
