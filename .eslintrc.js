@@ -50,6 +50,6 @@ module.exports = {
         // trailingComma: 'es5',
       },
     ],
-    'comma-dangle': [2, 'always-multiline'],
+    'comma-dangle': ['error', 'only-multiline'],
   },
 };
