@@ -5,6 +5,7 @@
 </template>
 
 <script>
+//// @ts-check
 import Vue from 'vue';
 
 export default Vue.extend({
