@@ -6,9 +6,9 @@
 
 <script>
 //// @ts-check
-import Vue from 'vue';
+/** @typedef {import("vue").default} Vue */
 
-export default Vue.extend({
+export default {
   /**
    * @typedef {Object<string, any>} Props
    * @property {string|number} propId ぷろっぷあいでい
@@ -42,5 +42,5 @@ export default Vue.extend({
    */
   /** @type {Methods} */
   methods: {},
-});
+};
 </script>
