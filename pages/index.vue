@@ -25,6 +25,11 @@ export default Vue.extend({
   components: {
     AppLogo,
   },
+  mounted() {
+    this.$axios.get('/api/user/').then(response => {
+      console.log(response);
+    });
+  },
 });
 </script>
 
