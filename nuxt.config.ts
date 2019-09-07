@@ -131,6 +131,13 @@ const config: NuxtConfiguration = {
     },
   },
   proxy: {
+    '/api/user': {
+      target: 'http://localhost:3000/stubs',
+      pathRewrite: {
+        // /api/～ -> http://localhost:3000/data/
+        '^/api/user/': 'user.json',
+      },
+    },
     // With options
     '/api': {
       target: 'http://localhost:3000/data',
