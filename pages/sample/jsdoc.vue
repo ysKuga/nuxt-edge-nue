@@ -6,39 +6,49 @@
 
 <script>
 // // @ts-check
-import Vue from 'vue';
-import {
-  // eslint-disable-next-line
-  ThisTypedComponentOptionsWithRecordProps as Options
-} from 'vue/types/options';
+/** @typedef {import("vue").default} Vue */
 
-/**
- * @typedef {Object<string, any>} Props
- * @property {string|number} propId ぷろっぷあいでい
- */
-/**
- * @typedef {Object<string, any>} Data
- * @property {number} id あいでぃい
- * @property {string} name なまえ
- */
-/**
- * @typedef {Object<string, any>} Computed
- * @property {string} computedId けいさんされたあいでい
- */
-/**
- * @typedef {Object<string, Function>} Methods
- * @property {{(name): boolean}} checkName なまえをちぇっくするめそっど
- */
-
-/** @type {Options<Vue, Data, Methods, Computed, Props>} */
-export const options = {
-  props: {},
+export default {
+  /**
+   * @typedef {Object<string, any>} Props
+   * @property {string|number} propId ぷろっぷあいでい
+   */
+  /** @type {import("vue/types/options").RecordPropsDefinition<Props>} */
+  props: {
+    propId: {
+      type: String,
+      default: () => 'aidei',
+    },
+  },
+  /**
+   * @typedef {Object<string, any>} Data
+   * @property {number} id あいでぃい
+   * @property {string} name なまえ
+   */
+  /**
+   * @typedef {import("vue/types/options").DataDef<Data, Props, Vue>} DataDef
+   */
+  /**
+   * @type {DataDef}
+   * @return {Data}
+   */
   data() {
     return {};
   },
+  /**
+   * @typedef {Object<string, any>} Computed
+   * @property {string} computedId けいさんされたあいでい
+   */
+  /**
+   * @type {import("vue/types/options").Accessors<Computed>}
+   */
   computed: {},
+  mounted() {},
+  /**
+   * @typedef {Object<string, Function>} Methods
+   * @property {{(name): boolean}} checkName なまえをちぇっくするめそっど
+   */
+  /** @type {Methods} */
   methods: {},
 };
-
-export default Vue.extend(options);
 </script>
