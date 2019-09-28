@@ -24,5 +24,15 @@ export default {
       namae: 'Taro',
     };
   },
+  /**
+   * @typedef {Object<string, Function>} Methods
+   * @property {{(name: string): boolean}} checkName なまえをちぇっくするめそっど
+   */
+  /** @type {Methods} */
+  methods: {
+    checkName(name) {
+      return !!name;
+    },
+  },
 };
 </script>
